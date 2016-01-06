@@ -1,0 +1,30 @@
+<div class="col-sm-offset-4">
+	<h2><span class="label label-info">Registration</span></h2>
+</div>
+<form name="regForm" class="form-horizontal" role="form" novalidate>
+	<div class="form-group">
+		<label for="name" class="control-label col-sm-4">Room Name</label>
+		<div class="col-sm-8">
+			<input id="name" name="name" ng-model="name" type="text" required ng-minlength="4" ng-maxlength="24"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="adminPassword" class="control-label col-sm-4">Admin Password</label>
+		<div class="col-sm-8">
+			<input id="adminPassword" name="adminPassword" ng-model="adminPassword" type="password" required ng-minlength="4" ng-maxlength="16"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="password" class="control-label col-sm-4">Password</label>
+		<div class="col-sm-8">
+			<input id="password" name="password" ng-model="password" type="password" required ng-minlength="4" ng-maxlength="16"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="maxParticipants" class="control-label col-sm-4">Max Participants</label>
+		<div class="col-sm-8">
+			<input id="maxParticipants" name="maxParticipants" ng-model="maxParticipants" type="number" required min="2" max="16"/>
+		</div>
+	</div>
+	<button id="btnSubmit" type="button" class="col-sm-offset-4 btn btn-success" ng-disabled="regForm.$invalid" ng-click="submitReg()">Submit</button>
+</form>

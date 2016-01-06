@@ -1,0 +1,11 @@
+{
+  "production": {
+    "url": "mongodb://localhost/meeting-app"
+  },
+  "test": {
+    "url": "mongodb://localhost/meeting-app-test"
+  },
+  "development": {
+    "url": "mongodb://localhost/meeting-app-dev"
+  }
+}
