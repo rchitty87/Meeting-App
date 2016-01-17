@@ -61,7 +61,7 @@ router.get('/EnterRoom/:details', function(req, res) {
 });
 
 //login to room as admin
-router.get('EnterRoomAdmin/:details', function(req, res) {
+router.get('/EnterRoomAdmin/:details', function(req, res) {
   var details = new Buffer(req.params.details, 'base64').toString('ascii').split(':');
   
   //details[0] = room name

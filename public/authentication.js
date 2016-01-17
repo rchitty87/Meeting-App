@@ -37,7 +37,7 @@ app.service('authenticationService', function($http, $q) {
 	}
 	
 	this.loginAsAdmin = function(details) {
-		$http.get('/EnterRoomAdmin/' + details).then(function(data){ 
+		return $http.get('/EnterRoomAdmin/' + details).then(function(data){ 
 			loggedIn = true;
 			roomId = angular.copy(data.data._id);
 			admin = true;		
@@ -46,5 +46,12 @@ app.service('authenticationService', function($http, $q) {
 		}, function(error) {
 			swal("Wrong Credentials", "Please enter valid credentials!", "error");				
 		});
+	}
+	
+	this.logout = function() {
+		loggedIn = false;
+		roomId = null;
+		admin = false;
+		personName = null;
 	}
 });

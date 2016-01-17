@@ -1,0 +1,16 @@
+body
+{
+		background-image: url("background.jpg");
+}
+
+.chat-window
+{
+	border: 1px solid black;
+	min-height: 20em;
+	overflow-y: auto;
+}
+
+#txtInput
+{
+	width: 100%;
+}

@@ -2,7 +2,7 @@ var Room = require('../models/room');
 var q = require('q');
 
 exports.findRoom = function(id) {
-  return q(Room.findOne({ 'id': id }).exec());
+  return q(Room.findOne({ '_id': id }).exec());
 }
 
 exports.createRoom = function(room) {
