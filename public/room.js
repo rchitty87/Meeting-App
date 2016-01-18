@@ -84,9 +84,10 @@ app.controller('RoomCtrl', function($scope, $http, $location, authenticationServ
 	//closed
 	socket.on('closed', function(data) {
 		//leave page
-		if(loadingDlg)
-			$('#loading-msg').dialog('close');
-			
+		if(loadingDlg != null) {
+			$('#loading-msg').dialog('destroy');
+			loadingDlg = null;
+		}
 		swal("Room Closed", "Admin has left the room.");
 		$location.path('/');
 	});
@@ -163,6 +164,6 @@ app.controller('RoomCtrl', function($scope, $http, $location, authenticationServ
 
 
 $(window).resize(function() {
-	if(loadingDlg)
+	if(loadingDlg != null)
 		$('#loading-dialog').dialog({ position: { my: 'center', at: 'center', of: window } });
 });

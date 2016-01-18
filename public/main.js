@@ -1,6 +1,6 @@
 var app = angular.module('meetingApp', ['ngAnimate', 'ngRoute']);
 
-app.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
   $routeProvider.when('/', {
     templateUrl: 'home.html'
   }).when('/registration', {
@@ -13,24 +13,17 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: 'room.html',
     controller: 'RoomCtrl'
   }).otherwise('/');
+  
+  $httpProvider.interceptors.push('authenticationService');
+  
 }]);
 
-app.run(function($rootScope, $location) {
-  $rootScope.loggedIn = false;
-  $rootScope.roomId = null;
-  $rootScope.isAdmin = false;
-  $rootScope.personName = null;
-  
-  $rootScope.$watch('loggedIn', function(newValue, oldValue) {
-    if(newValue && !oldValue) {
-      
-    }
-    else {
-      
-    }
-  });
-  
+app.run(function($rootScope, $location) {  
   $rootScope.$on('$routeChangeError', function() {
     $location.path('/');
   });
+  
+  $rootScope.$on('$routeChangeStart', function() {
+    
+  })
 });
