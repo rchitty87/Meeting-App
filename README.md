@@ -1,5 +1,5 @@
 Thinkful Node.js and AngularJS Capstone Project
-
+================================================
 -Simple chat application with MongoDB
 
 -Admin creates a room with max participants
